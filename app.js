@@ -63,9 +63,10 @@ while (!hasEscaped) {
     if (parseInt(userResponseToPrompt) === holeNumbers[holeNumbers.indexOf(holeNumbers[i])]) {
       counter -= 1
       console.log("Oh sorry you chose a hole number, you have " + counter + " lives left, TRY AGAIN");
-    }else if (parseInt(userResponseToPrompt) === holeNumbers[holeNumbers.indexOf(holeNumbers[i])] && counter < 1){
+    } else if (counter <= 0) {
       console.log("Sorry you died! Buy more lives to continue game!");
       hasEscaped = true;
+      break;
     }
 
   }
@@ -80,7 +81,7 @@ while (!hasEscaped) {
       break;
     }
   }
-  if(openedDoors.indexOf(parseInt(userResponseToPrompt)) !== -1) {
+  if (openedDoors.indexOf(parseInt(userResponseToPrompt)) !== -1) {
     console.log("Sorry choose another number, number has already been used");
 
   }
